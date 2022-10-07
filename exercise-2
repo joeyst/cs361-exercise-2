@@ -13,15 +13,7 @@ end
 # Mangle the name by reversing it or borgifying it
 def modified_name(choose)
   new_name1 = reverse_words(@name)
-  # Store the mangled name
-  @name = new_name1
-  puts new_name1
-  if choose
-    new_name2 = borgify(reverse_words(new_name1))
-    puts new_name2
-    @name = new_name2
-  end
-  return @name
+  choose ? borgify(reverse_words(new_name1)) : new_name1
 end
 
 puts "New name: #{modified_name(false)}"
