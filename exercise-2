@@ -6,6 +6,10 @@ def reverse_words(words)
   words.split.reverse.join(' ')
 end
 
+def borgify(string)
+  string + " Borg"
+end
+
 # Mangle the name by reversing it or borgifying it
 def modified_name(choose)
   new_name1 = reverse_words(@name)
