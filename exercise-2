@@ -18,8 +18,11 @@ end
 
 # Mangle the name by reversing it or borgifying it
 def modified_name(choose)
-  new_name1 = reverse_words(@name)
-  choose ? borgify(reverse_words(new_name1)) : new_name1
+  if choose
+    words_pipeline(@name, :reverse_words, :borgify)
+  else 
+    words_pipeline(@name, :reverse_words)
+  end
 end
 
 puts "New name: #{modified_name(false)}"
